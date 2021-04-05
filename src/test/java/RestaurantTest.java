@@ -72,7 +72,13 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     //<<<<<<<<<<<<<<<<<<<<<<<Order Value>>>>>>>>>>>>>>>>>>>>>>>
-    
+    @Test
+    public void Order_Value_With_Item_Names_given() {
+    	List<String> itemNames = new ArrayList<String>();
+    	itemNames.add("Sweet corn soup");
+    	itemNames.add("Vegetable lasagne");
+    	assertEquals(restaurant.getOrderValue(itemNames), 388);
+    }
     
     @Test
     public void Order_value_With_No_Items() {
