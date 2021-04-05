@@ -36,7 +36,11 @@ class RestaurantTest {
 
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
-       
+        //WRITE UNIT TEST CASE HERE
+    	 LocalTime openingTime = LocalTime.parse("00:00:00");
+         LocalTime closingTime = LocalTime.parse("00:00:59");
+         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
+         assertTrue(!restaurant.isRestaurantOpen());
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -67,5 +71,11 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
+    //<<<<<<<<<<<<<<<<<<<<<<<Order Value>>>>>>>>>>>>>>>>>>>>>>>
     
+    
+    @Test
+    public void Order_value_With_No_Items() {
+    	assertEquals(restaurant.getOrderValue(new ArrayList<String>()), 0);
+    }
 }

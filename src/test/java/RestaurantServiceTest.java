@@ -33,7 +33,13 @@ class RestaurantServiceTest {
     @Test
     public void searching_for_non_existing_restaurant_should_throw_exception() throws restaurantNotFoundException {
         //WRITE UNIT TEST CASE HERE
-    	
+    	boolean excception = false;
+    	try {
+    	Restaurant existinRestaurant = service.findRestaurantByName("Ameli");
+    	}catch(restaurantNotFoundException e) {
+    		excception = true;
+    	}
+    	assertTrue(excception);
     	
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
